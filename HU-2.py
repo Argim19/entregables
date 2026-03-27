@@ -43,7 +43,7 @@ def calculate_statistics():
     print("Total quantity of products:", total_products)
 
 
-# Main menu
+#show menu
 while True:
     print("\n--- MENU ---")
     print("1. Add product")
@@ -51,19 +51,23 @@ while True:
     print("3. Calculate statistics")
     print("4. Exit")
 
-    option = input("Select an option: ")
+    option = int(input("Select an option: "))
 
-    if option == "1":
-        add_product()
-    elif option == "2":
-        show_inventory()
-    elif option == "3":
-        calculate_statistics()
-    elif option == "4":
-        print("Exiting program...")
-        break
-    else:
-        print("Invalid option. Try again.")
+    match option:
+        case 1:
+            add_product()
+        case 2:
+            show_inventory()
+        case 3:
+            calculate_statistics()
+        case 4:
+            print("Exiting")
+            break             
+
+        case _:
+            print("Invalid option. Try again.")
+        
+
 
 # This program allows the user to add products to an inventory,
 # display them, and calculate basic statistics such as total value
