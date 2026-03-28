@@ -43,6 +43,13 @@ def calculate_statistics():
     print("Total quantity of products:", total_products)
 
 
+def validate_option(value):
+    try:
+        option = int(value)
+        return option if 0 <= option <= 6 else None
+    except ValueError:
+        print("Invalid option. Try again.")
+        
 #show menu
 while True:
     print("\n--- MENU ---")
@@ -51,7 +58,7 @@ while True:
     print("3. Calculate statistics")
     print("4. Exit")
 
-    option = int(input("Select an option: "))
+    option = validate_option(input("Select an option: "))
 
     match option:
         case 1:
